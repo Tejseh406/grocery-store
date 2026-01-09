@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import { PhoneStep } from '@/components/ui/PhoneStep'
-import { OtpStep } from '@/components/ui/OtpStep'
+import { useState } from "react";
+import { PhoneStep } from "@/components/ui/PhoneStep";
+import { OtpStep } from "@/components/ui/OtpStep";
 
 type LoginProps = {
-  onClose: () => void
-}
+  onClose: () => void;
+};
 
 const LoginModal = ({ onClose }: LoginProps) => {
-   const [step, setStep] = useState<"PHONE" | "OTP">("PHONE")
-   const [phone, setPhone] = useState("")
+  const [step, setStep] = useState<"PHONE" | "OTP">("PHONE");
+  const [phone, setPhone] = useState("");
 
   return (
     <>
@@ -19,15 +19,9 @@ const LoginModal = ({ onClose }: LoginProps) => {
           onContinue={() => setStep("OTP")}
         />
       )}
-      {step === "OTP" && (
-        <OtpStep
-          phone={phone}
-          onSuccess={onClose}
-        />
-      )}
+      {step === "OTP" && <OtpStep phone={phone} onSuccess={onClose} />}
     </>
-  )
+  );
+};
 
-}
-
-export default LoginModal
+export default LoginModal;

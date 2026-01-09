@@ -6,7 +6,7 @@ const Logo = () => {
       <img src={LogoIcon} alt="logo" />
       <span className="text-xl font-medium">BigBazar</span>
     </div>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

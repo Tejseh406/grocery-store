@@ -1,17 +1,17 @@
 import { DialogFooter } from "@/components/ui/dialog";
-import Logo from "../shared/Logo"
+import Logo from "../shared/Logo";
 import Button from "../shared/Button";
 
 type Props = {
-  phone: string
-  setPhone: (v: string) => void
-  onContinue: () => void
-}
+  phone: string;
+  setPhone: (v: string) => void;
+  onContinue: () => void;
+};
 
 export function PhoneStep({ phone, setPhone, onContinue }: Props) {
   return (
     <div className="w-full mx-auto xs:w-[70%]">
-      <div className="flex flex-col items-center gap-2 text-center" >
+      <div className="flex flex-col items-center gap-2 text-center">
         <Logo />
 
         <h2 className="text-xl font-bold mt-3">
@@ -38,9 +38,8 @@ export function PhoneStep({ phone, setPhone, onContinue }: Props) {
           label="Continue"
           size="md"
           variant="primary"
-        >
-        </Button>
+        ></Button>
       </DialogFooter>
     </div>
-  )
+  );
 }

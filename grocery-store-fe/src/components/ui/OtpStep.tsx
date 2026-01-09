@@ -12,20 +12,16 @@ type Props = {
 
 export function OtpStep({ phone, onSuccess }: Props) {
   const [otp, setOtp] = useState("");
-  const [isVerifying, setIsVerifying] = useState(false);
 
   const verifyOtp = useCallback(() => {
     onSuccess();
-    setIsVerifying(true);
   }, [onSuccess]);
 
   useEffect(() => {
-   if(otp.length === 6) {
-    verifyOtp();
-   }
-  },[otp, verifyOtp])
-
-
+    if (otp.length === 6) {
+      verifyOtp();
+    }
+  }, [otp, verifyOtp]);
 
   return (
     <div className="w-full mx-auto xs:w-[70%]">
@@ -40,11 +36,15 @@ export function OtpStep({ phone, onSuccess }: Props) {
           maxLength={6}
           value={otp}
           onChange={setOtp}
-          disabled={isVerifying}
+          disabled={false}
         >
           <InputOTPGroup className="gap-2">
             {Array.from({ length: 6 }).map((_, index) => (
-              <InputOTPSlot key={index} index={index} className="first:rounded-md last:rounded-md rounded-md border border-(--gray-3)" />
+              <InputOTPSlot
+                key={index}
+                index={index}
+                className="first:rounded-md last:rounded-md rounded-md border border-(--gray-3)"
+              />
             ))}
           </InputOTPGroup>
         </InputOTP>
@@ -56,4 +56,3 @@ export function OtpStep({ phone, onSuccess }: Props) {
     </div>
   );
 }
-
