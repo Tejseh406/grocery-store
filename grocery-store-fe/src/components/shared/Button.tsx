@@ -3,7 +3,7 @@ import type { IButtonProps } from "@/models/ButtonModel";
 import type React from "react";
 
 const Button: React.FC<IButtonProps> = ({
-  label,
+  children,
   variant = "primary",
   size = "md",
   handleClick,
@@ -16,7 +16,7 @@ const Button: React.FC<IButtonProps> = ({
       disabled={disabled}
       className={`cursor-pointer font-semibold rounded-full disabled:bg-(--gray-3) disabled:text-black disabled:pointer-none: ${customStyles} ${variants[variant]} ${sizes[size]}`}
     >
-      {label}
+      {children}
     </button>
   );
 };
