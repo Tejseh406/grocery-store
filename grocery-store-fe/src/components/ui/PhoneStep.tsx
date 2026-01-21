@@ -35,10 +35,11 @@ export function PhoneStep({ phone, setPhone, onContinue }: Props) {
         <Button
           disabled={phone.length !== 10}
           handleClick={onContinue}
-          label="Continue"
           size="md"
           variant="primary"
-        ></Button>
+        >
+          Continue
+        </Button>
       </DialogFooter>
     </div>
   );

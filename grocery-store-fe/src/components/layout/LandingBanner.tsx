@@ -13,15 +13,13 @@ const LandingBanner = () => {
           Fresh groceries,{" "}
           <span className="block">Delivered to Your Doorstep</span>
         </h1>
-        <p className="text-xs">
+        <p className="text-xs sm:text-sm">
           Enjoy hassle-free online grocery shopping with fast delivery and the
           best quality product
         </p>
-        <Button
-          label="Shop now"
-          handleClick={onExploreClick}
-          customStyles="max-w-[150px]"
-        />
+        <Button handleClick={onExploreClick} customStyles="max-w-[150px]">
+          <span>Shop now</span>
+        </Button>
       </div>
       <div className="flex-1 justify-center hidden xs:flex">
         <img
